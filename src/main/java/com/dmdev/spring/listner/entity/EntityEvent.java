@@ -1,8 +1,11 @@
 package com.dmdev.spring.listner.entity;
 
+import lombok.Getter;
+
 import java.util.EventObject;
 
 public class EntityEvent extends EventObject {
+    @Getter
     private final AccessType accessType;
 
     public EntityEvent(Object entity, AccessType accessType) {
@@ -10,7 +13,5 @@ public class EntityEvent extends EventObject {
         this.accessType = accessType;
     }
 
-    public AccessType getAccessType() {
-        return accessType;
-    }
+
 }
