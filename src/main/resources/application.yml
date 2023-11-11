@@ -20,3 +20,12 @@ db:
       timeout: 3
 
 spring.profiles.active: qa
+
+
+logging:
+  level:
+    root: WARN
+    com.dmdev.spring.database.pool: INFO
+  file:
+    name: dmdev.log
+    path: /
