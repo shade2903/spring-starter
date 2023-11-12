@@ -1,14 +1,9 @@
 package com.dmdev.spring.config;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.context.properties.ConstructorBinding;
 
 import java.util.List;
 import java.util.Map;
-
 
 @ConfigurationProperties(prefix = "db")
 public record DatabaseProperties(String username,
