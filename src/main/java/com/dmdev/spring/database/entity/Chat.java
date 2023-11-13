@@ -28,6 +28,6 @@ public class Chat implements BaseEntity<Long>{
 
     @Builder.Default
     @OneToMany(mappedBy = "chat")
-    private List<UserChat> userChat = new ArrayList<>();
+    private List<UserChat> userChats = new ArrayList<>();
 
 }
