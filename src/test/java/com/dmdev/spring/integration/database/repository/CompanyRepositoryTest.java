@@ -2,6 +2,7 @@ package com.dmdev.spring.integration.database.repository;
 
 import com.dmdev.spring.database.entity.Company;
 import com.dmdev.spring.database.repository.CompanyRepository;
+import com.dmdev.spring.integration.IntegrationBaseTest;
 import com.dmdev.spring.integration.annotation.IT;
 import lombok.RequiredArgsConstructor;
 
@@ -19,10 +20,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-@IT
+
 @RequiredArgsConstructor
 //@Commit
-class CompanyRepositoryTest {
+class CompanyRepositoryTest extends IntegrationBaseTest {
 
     private static final Integer APPLE_ID = 5;
 
