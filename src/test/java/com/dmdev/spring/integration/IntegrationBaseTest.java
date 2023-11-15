@@ -12,9 +12,8 @@ import org.testcontainers.containers.PostgreSQLContainer;
         "classpath:sql/data.sql"
 })
 public abstract class IntegrationBaseTest {
-    private static final PostgreSQLContainer<?> container = new PostgreSQLContainer<>("postgres")
-            .withUsername("nighstahde2903@gmail.com")
-            .withPassword("1234Docker");
+    private static final PostgreSQLContainer<?> container = new PostgreSQLContainer<>("postgres:14.10");
+
 
 
     @BeforeAll

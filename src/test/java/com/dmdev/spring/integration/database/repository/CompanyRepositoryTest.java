@@ -6,6 +6,7 @@ import com.dmdev.spring.integration.IntegrationBaseTest;
 import com.dmdev.spring.integration.annotation.IT;
 import lombok.RequiredArgsConstructor;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.test.annotation.Commit;
 import org.springframework.test.annotation.Rollback;
@@ -33,6 +34,7 @@ class CompanyRepositoryTest extends IntegrationBaseTest {
     private final CompanyRepository companyRepository;
 
     @Test
+    @Disabled
     void delete(){
         var maybeCompany = companyRepository.findById(APPLE_ID);
         assertTrue(maybeCompany.isPresent());

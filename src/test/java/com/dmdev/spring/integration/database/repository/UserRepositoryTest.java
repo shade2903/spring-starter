@@ -43,7 +43,6 @@ class UserRepositoryTest extends IntegrationBaseTest {
     }
 
     @Test
-    @Commit
     void checkAuditing(){
         var ivan = userRepository.findById(1L).get();
         ivan.setBirthDate(ivan.getBirthDate().plusYears(1L));
