@@ -2,15 +2,11 @@ package com.dmdev.spring.integration.database.repository;
 
 import com.dmdev.spring.database.entity.Company;
 import com.dmdev.spring.database.repository.CompanyRepository;
-import com.dmdev.spring.integration.IntegrationBaseTest;
-import com.dmdev.spring.integration.annotation.IT;
+import com.dmdev.spring.integration.IntegrationTestBase;
 import lombok.RequiredArgsConstructor;
 
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-import org.springframework.test.annotation.Commit;
-import org.springframework.test.annotation.Rollback;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.support.TransactionTemplate;
 
 import javax.persistence.EntityManager;
@@ -24,7 +20,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @RequiredArgsConstructor
 //@Commit
-class CompanyRepositoryTest extends IntegrationBaseTest {
+class CompanyRepositoryTest extends IntegrationTestBase {
 
     private static final Integer APPLE_ID = 5;
 

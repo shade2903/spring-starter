@@ -11,7 +11,7 @@ import org.testcontainers.containers.PostgreSQLContainer;
 @Sql({
         "classpath:sql/data.sql"
 })
-public abstract class IntegrationBaseTest {
+public abstract class IntegrationTestBase {
     private static final PostgreSQLContainer<?> container = new PostgreSQLContainer<>("postgres:14.10");
 
 
