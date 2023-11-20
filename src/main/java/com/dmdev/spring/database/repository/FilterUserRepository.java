@@ -17,5 +17,5 @@ public interface FilterUserRepository {
 
     void updateCompanyAndRole(List<User> users);
 
-    void updateCompanyAndRoleName(List<User> users);
+    void updateCompanyAndRoleNamed(List<User> users);
 }
