@@ -37,7 +37,7 @@ public class UserService implements UserDetailsService {
     private final UserCreateEditMapper userCreateEditMapper;
     private final ImageService imageService;
 
-//    @PostFilter("filterObject.role.name().equals('ADMIN')")
+    //    @PostFilter("filterObject.role.name().equals('ADMIN')")
 //    @PostFilter("@companyService.findById(filterObject.company.id()).isPresent()")
     public Page<UserReadDto> findAll(UserFilter filter, Pageable pageable) {
         var predicate = QPredicates.builder()
@@ -56,14 +56,14 @@ public class UserService implements UserDetailsService {
                 .toList();
     }
 
-    @PreAuthorize("hasAuthority('ADMIN')")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
 //    @PostAuthorize("returnObject")
     public Optional<UserReadDto> findById(Long id) {
         return userRepository.findById(id)
                 .map(userReadMapper::map);
     }
 
-    public Optional<byte[]> findAvatar(Long id){
+    public Optional<byte[]> findAvatar(Long id) {
         return userRepository.findById(id)
                 .map(User::getImage)
                 .filter(StringUtils::hasText)
@@ -111,14 +111,15 @@ public class UserService implements UserDetailsService {
                 .orElse(false);
     }
 
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         return userRepository.findByUsername(username)
                 .map(user -> new org.springframework.security.core.userdetails.User(
-                       user.getUsername(),
-                      user.getPassword(),
+                        user.getUsername(),
+                        user.getPassword(),
                         Collections.singleton(user.getRole())
                 ))
-                .orElseThrow(() ->new UsernameNotFoundException("Failed to retrieve user: " + username));
+                .orElseThrow(() -> new UsernameNotFoundException("Failed to retrieve user: " + username));
     }
 }
