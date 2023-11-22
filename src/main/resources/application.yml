@@ -54,8 +54,8 @@ spring:
       client:
         registration:
           google:
-            clientId: _________
-            clientSecret: ___________
+            clientId:  ***********************
+            clientSecret:  ***********************
             redirectUri: http://localhost:8081/login/oauth2/code/google
             scope: openid,email,profile
   messages:
@@ -67,8 +67,8 @@ server:
 springdoc:
   swagger-ui:
     oauth:
-      clientId: ________
-      clientSecret: ________
+      clientId: ***********************
+      clientSecret:  ***********************
       scope: openid,email,profile
     oauth2-redirect-url: http://localhost:8080/swagger-ui/oauth2-redirect.html
 
